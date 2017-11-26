@@ -170,6 +170,9 @@ namespace ArcaneLibrary
             Manager.loadSpells();
         }
 
-        
+        private void btnEditSpell_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

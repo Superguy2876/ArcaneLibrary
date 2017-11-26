@@ -21,8 +21,15 @@ namespace ArcaneLibrary
 
         public static void addSpell(Spell spell)
         {
-            Spells.Add(spell);
-            Spells.Sort();
+            if (!Spells.Contains(spell))
+            {
+                Spells.Add(spell);
+                Spells.Sort();
+            }
+            else
+            {
+                MessageBox.Show("A spell with that name already exists.");
+            }
 
             
         }

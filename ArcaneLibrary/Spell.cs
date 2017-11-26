@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArcaneLibrary
 {
-    public class Spell : IComparable<Spell>
+    public class Spell : IComparable<Spell> , IEquatable<Spell>
     {
         public string       name;
         public int          level;
@@ -47,6 +47,12 @@ namespace ArcaneLibrary
             this.description =          description;      
             this.classes =              classes;          
             this.tags =                 tags;             
+        }
+
+        
+        public bool Equals(Spell that)
+        {
+            return this.name.Equals(that.name);
         }
 
         public int CompareTo(Spell that)

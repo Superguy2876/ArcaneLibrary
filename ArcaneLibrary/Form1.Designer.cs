@@ -30,6 +30,8 @@
         {
             this.tcLibrary = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblSearchSpell = new System.Windows.Forms.Label();
+            this.tbSearchSpell = new System.Windows.Forms.TextBox();
             this.tbSpell = new System.Windows.Forms.TextBox();
             this.btnEditSpell = new System.Windows.Forms.Button();
             this.btnDeleteSpell = new System.Windows.Forms.Button();
@@ -40,19 +42,17 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblSearchItem = new System.Windows.Forms.Label();
+            this.tbSearchItem = new System.Windows.Forms.TextBox();
             this.btnEditItem = new System.Windows.Forms.Button();
             this.btnDeleteItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.tbItem = new System.Windows.Forms.TextBox();
             this.lbItems = new System.Windows.Forms.ListBox();
-            this.tbSearchSpell = new System.Windows.Forms.TextBox();
-            this.lblSearchSpell = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblSearchItem = new System.Windows.Forms.Label();
-            this.tbSearchItem = new System.Windows.Forms.TextBox();
             this.tcLibrary.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -89,6 +89,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Spells";
             // 
+            // lblSearchSpell
+            // 
+            this.lblSearchSpell.AutoSize = true;
+            this.lblSearchSpell.Location = new System.Drawing.Point(7, 33);
+            this.lblSearchSpell.Name = "lblSearchSpell";
+            this.lblSearchSpell.Size = new System.Drawing.Size(41, 13);
+            this.lblSearchSpell.TabIndex = 7;
+            this.lblSearchSpell.Text = "Search";
+            // 
+            // tbSearchSpell
+            // 
+            this.tbSearchSpell.Location = new System.Drawing.Point(54, 30);
+            this.tbSearchSpell.Name = "tbSearchSpell";
+            this.tbSearchSpell.Size = new System.Drawing.Size(269, 20);
+            this.tbSearchSpell.TabIndex = 6;
+            this.tbSearchSpell.TextChanged += new System.EventHandler(this.tbSearchSpell_TextChanged);
+            // 
             // tbSpell
             // 
             this.tbSpell.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -111,6 +128,7 @@
             this.btnEditSpell.TabIndex = 4;
             this.btnEditSpell.Text = "Edit";
             this.btnEditSpell.UseVisualStyleBackColor = true;
+            this.btnEditSpell.Click += new System.EventHandler(this.btnEditSpell_Click);
             // 
             // btnDeleteSpell
             // 
@@ -166,14 +184,14 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
@@ -194,6 +212,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Items";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblSearchItem
+            // 
+            this.lblSearchItem.AutoSize = true;
+            this.lblSearchItem.Location = new System.Drawing.Point(7, 33);
+            this.lblSearchItem.Name = "lblSearchItem";
+            this.lblSearchItem.Size = new System.Drawing.Size(41, 13);
+            this.lblSearchItem.TabIndex = 12;
+            this.lblSearchItem.Text = "Search";
+            // 
+            // tbSearchItem
+            // 
+            this.tbSearchItem.Location = new System.Drawing.Point(54, 30);
+            this.tbSearchItem.Name = "tbSearchItem";
+            this.tbSearchItem.Size = new System.Drawing.Size(269, 20);
+            this.tbSearchItem.TabIndex = 11;
+            this.tbSearchItem.TextChanged += new System.EventHandler(this.tbSearchItem_TextChanged);
             // 
             // btnEditItem
             // 
@@ -250,23 +285,6 @@
             this.lbItems.TabIndex = 1;
             this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
             // 
-            // tbSearchSpell
-            // 
-            this.tbSearchSpell.Location = new System.Drawing.Point(54, 30);
-            this.tbSearchSpell.Name = "tbSearchSpell";
-            this.tbSearchSpell.Size = new System.Drawing.Size(269, 20);
-            this.tbSearchSpell.TabIndex = 6;
-            this.tbSearchSpell.TextChanged += new System.EventHandler(this.tbSearchSpell_TextChanged);
-            // 
-            // lblSearchSpell
-            // 
-            this.lblSearchSpell.AutoSize = true;
-            this.lblSearchSpell.Location = new System.Drawing.Point(7, 33);
-            this.lblSearchSpell.Name = "lblSearchSpell";
-            this.lblSearchSpell.Size = new System.Drawing.Size(41, 13);
-            this.lblSearchSpell.TabIndex = 7;
-            this.lblSearchSpell.Text = "Search";
-            // 
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -289,33 +307,16 @@
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // loadToolStripMenuItem1
             // 
             this.loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem1.Text = "Load";
             this.loadToolStripMenuItem1.Click += new System.EventHandler(this.loadToolStripMenuItem1_Click);
-            // 
-            // lblSearchItem
-            // 
-            this.lblSearchItem.AutoSize = true;
-            this.lblSearchItem.Location = new System.Drawing.Point(7, 33);
-            this.lblSearchItem.Name = "lblSearchItem";
-            this.lblSearchItem.Size = new System.Drawing.Size(41, 13);
-            this.lblSearchItem.TabIndex = 12;
-            this.lblSearchItem.Text = "Search";
-            // 
-            // tbSearchItem
-            // 
-            this.tbSearchItem.Location = new System.Drawing.Point(54, 30);
-            this.tbSearchItem.Name = "tbSearchItem";
-            this.tbSearchItem.Size = new System.Drawing.Size(269, 20);
-            this.tbSearchItem.TabIndex = 11;
-            this.tbSearchItem.TextChanged += new System.EventHandler(this.tbSearchItem_TextChanged);
             // 
             // frmMain
             // 
