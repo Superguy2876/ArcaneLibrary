@@ -174,5 +174,10 @@ namespace ArcaneLibrary
         {
 
         }
+
+        private void btnDeleteSpell_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

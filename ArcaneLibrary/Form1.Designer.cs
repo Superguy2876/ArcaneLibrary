@@ -139,6 +139,7 @@
             this.btnDeleteSpell.TabIndex = 3;
             this.btnDeleteSpell.Text = "Delete";
             this.btnDeleteSpell.UseVisualStyleBackColor = true;
+            this.btnDeleteSpell.Click += new System.EventHandler(this.btnDeleteSpell_Click);
             // 
             // btnAddSpell
             // 
